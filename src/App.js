@@ -24,6 +24,10 @@ function App() {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
+  // const handleEditTask = (taskId) => {
+  //   setTasks((prevTasks) ));
+  // }
+
   return (
     <div className="App">
       <h1>Task Manager</h1>
