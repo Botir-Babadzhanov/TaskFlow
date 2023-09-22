@@ -24,9 +24,13 @@ function App() {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
-  // const handleEditTask = (taskId) => {
-  //   setTasks((prevTasks) ));
-  // }
+  const handleEditTask = (taskId, newName) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, name: newName } : task
+      )
+    );
+  };
 
   return (
     <div className="App">
@@ -35,7 +39,8 @@ function App() {
       <TaskList
         tasks={tasks}
         onToggleComplete={handleToggleComplete}
-        onDelete={handleDeleteTask}
+        onDeleteTask={handleDeleteTask}
+        onEditTask={handleEditTask}
       />
     </div>
   );
